@@ -19,3 +19,7 @@
 <p *ngSwitchCase="'mario'">marico</p>
 <p *ngSwitchDefault>Nananay</p>
 </div>
+
+<div *ngFor="let product of products">
+  <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
+</div>
