@@ -1,25 +1,39 @@
 <input type="text" [(ngModel)]="title">
 {{ title }}
 
-<button (click)="addItem()"> Add item </button>
-
-<ul>
-<li *ngFor="let name of products; index as i">
-{{ name.id }} 
-{{ name.title }}
-{{ name.price }}
-{{ name.description }}
-<button (click)="deleteItem(i)">Delete item </button>
-</li>
-</ul>
-
-<div [ngSwitch]="title">
-<p *ngSwitchCase="'nicolas'">Nico</p>
-<p *ngSwitchCase="'juan'">juan</p>
-<p *ngSwitchCase="'mario'">marico</p>
-<p *ngSwitchDefault>Nananay</p>
+<div *ngIf="title === 'nicolas'">
+  este es nicolas
 </div>
 
-<div *ngFor="let product of products">
-  <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
+<div *ngIf="title === 'julian'">
+  este es julian
+</div>
+
+<div *ngIf="title === 'camilo'">
+  este es camilo
+</div>
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'nicolas'">este es nicolas</p>
+  <p *ngSwitchCase="'julian'">este es julian</p>
+  <p *ngSwitchCase="'camilo'">este es camilo</p>
+  <p *ngSwitchDefault>no hay match</p>
+</div>
+
+<button (click)="addItem()">Add item</button>
+
+<ul>
+  <li *ngIf="items.length === 0">la lista esta vacia</li>
+  <li *ngFor="let name of items; index as i">
+    {{ name }} {{ i }}
+    <button (click)="deleteItem(i)">delete</button>
+  </li>
+</ul>
+
+<div class="product-grid">
+  <app-product
+    *ngFor="let product of products"
+    (productClicked)="clickProduct($event)"
+    [product]="product">
+  </app-product>
 </div>

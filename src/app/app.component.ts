@@ -14,24 +14,28 @@ export class AppComponent {
   products: Product[] = [
     {
       id: '1',
+      image: 'assets/images/image01.jpg',
       title: 'Camiseta',
       price: 8000,
       description: 'una camisetota'
     },
     {
       id: '2',
+      image: 'assets/images/images02.jpg',
       title: 'Pantacha',
       price: 5000,
       description: 'una pantacha'
     },
     {
       id: '3',
+      image: 'assets/images/image03.jpg',
       title: 'Cucos',
       price: 1000,
       description: 'unos cucos'
     },
     {
       id: '4',
+      image: 'assets/images/image04.jpg',
       title: 'Tanga',
       price: 8000,
       description: 'una tanga roja'
